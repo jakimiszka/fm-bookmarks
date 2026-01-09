@@ -1,0 +1,102 @@
+@use './utils' as u;
+@use './variables' as v;
+
+.btn{
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-weight: v.$font-weight-semibold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &--primary{
+        background-color: v.$blue-600;
+        color: v.$white;
+
+        &:hover{
+            background-color: v.$blue-700;
+        }
+    }
+
+    &--secondary{
+        background-color: v.$grey-500;
+        color: v.$grey-700;
+
+        &:hover{
+            background-color: v.$grey-650;
+        }
+    }
+
+    &--contact{
+        background-color: v.$red-400;
+        color: v.$white;
+
+        &:hover{
+            //background-color: v.$red-700;
+        }
+    }
+}
+
+.titles{
+    &--heading2{
+        @include v.mobile-text-preset-1;
+    }
+    &--text{
+        @include v.mobile-text-preset-2-regular;
+        color: v.$grey-600;
+    }
+    
+}
+
+.feature-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+
+    img{
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 24px;
+    }
+
+    &--content{
+        h3{
+            @include v.mobile-text-preset-3;
+            padding-bottom: 16px;
+        }
+        p{
+            @include v.mobile-text-preset-2-regular;
+            color: v.$grey-600;
+            padding-bottom: 24px;
+        }
+    }
+}
+
+.extension-card{
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 24px;
+    }
+
+    &--content{
+        h3{
+            @include v.mobile-text-preset-3;
+            padding-bottom: 16px;
+        }
+        p{
+            @include v.mobile-text-preset-2-regular;
+            color: v.$grey-600;
+            padding-bottom: 24px;
+        }
+    }
+}
