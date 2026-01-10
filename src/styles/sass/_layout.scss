@@ -2,7 +2,7 @@
 @use './variables' as v;
 
 .container{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     max-width: 450px;
     
@@ -22,18 +22,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 48px 32px;
+    padding: 4rem 3rem;
 
     &--logo{
         img{
-            max-height: 48px;
+            height: 100%;
             width: auto;
         }
     }
 
     &--mobile{
         img{
-            max-height: 18px;
+            height: 100%;
             width: auto;
         }   
     }
@@ -43,6 +43,10 @@
         justify-content: space-around;
         align-items: center;
         height: 100%;
+
+        button{
+
+        }
     }
 }
 
@@ -53,32 +57,40 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 32px;
+    padding: 0 2rem;
+    gap: 3rem;
+    margin-bottom: 8rem;
 
     &--graphic{
+        position: relative;
         padding-bottom: 48px;
+        z-index: 2;
+
         img{
+            position: relative;
+            z-index: 2;
             max-width: 100%;
             height: auto;
         }
     }
 
     &--content{
-        
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         h1{
             @include v.mobile-text-preset-1;
-            padding-bottom: 24px;
+            color: v.$blue-950;
         }
         p{
             @include v.mobile-text-preset-2-regular;
-            color: v.$grey-600;
-            padding-bottom: 24px;
+            color: v.$grey-400;
         }
     }
 
     &--buttons{
         display: flex;
-        gap: 16px;
+        gap: 1rem;
 
         @include u.breakpoint('medium'){
             flex-direction: row;
@@ -91,32 +103,40 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 0 32px;
-    margin-top: 96px;
 
-    &--main,
-    &--sub{
+    &--main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
         h2{
             @include v.mobile-text-preset-1;
-            padding-bottom: 16px;
+            color: v.$blue-950;
+            padding-bottom: 2rem;
         }
         p{
             @include v.mobile-text-preset-2-regular;
-            color: v.$grey-600;
-            padding-bottom: 24px;
+            color: v.$grey-400;
+            padding-bottom: 2rem;
         }
         ul{
             display: flex;
             flex-direction: column;
+            width: 80%;
             list-style: none;
-            gap: 16px;
             margin-bottom: 48px;
 
             li{
                 cursor: pointer;
                 @include v.mobile-text-preset-2-medium;
                 color: v.$grey-600;
+                border-top: .8px solid v.$grey-400;
+                padding: 1rem 0;
 
+                &:nth-last-child(1){
+                    border-bottom: .8px solid v.$grey-400;
+                }
 
                 &:hover{
                     color: v.$blue-700;
@@ -140,7 +160,7 @@
     }
     p{
         @include v.mobile-text-preset-2-regular;
-        color: v.$grey-600;
+        color: v.$grey-400;
         padding-bottom: 48px;
     }
 }

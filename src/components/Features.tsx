@@ -13,7 +13,7 @@ export const Features = () => {
         {
             id: 1,
             imagePath: featureTab1,
-            title: "Simple Bookmarking",
+            title: "Bookmark in one click",
             description: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites."
         },
         {

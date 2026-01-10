@@ -17,7 +17,7 @@ export const Navbar = () => {
                     <li>Pricing</li>
                     <li>Contact</li>
                 </ul>
-                <button>Login</button>
+                <button className='btn btn--contact'>Login</button>
             </div>
             
         </nav>
