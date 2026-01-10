@@ -6,8 +6,9 @@ export const Contact = () => {
                 Stay up-to-date with what we’re doing
             </h3>
             <form className="contact--form">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <div className="input-wrapper">
+                    <input type="email" id="email" name="email" required placeholder="email@example.com" />
+                </div>
                 <button type="submit" className="btn btn--contact">Send Message</button>
             </form>
         </section>

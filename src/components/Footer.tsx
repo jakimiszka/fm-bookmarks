@@ -1,11 +1,11 @@
-import bookmarkLogo from '../assets/logo-bookmark.svg';
 import facebookIcon from '../assets/icon-facebook.svg';
 import twitterIcon from '../assets/icon-twitter.svg';
+import bookmarkLogoWhite from '../assets/logo-bookmark-white.svg';
 
 export const Footer = () => {
     return (
         <footer className="footer">
-            <img src={bookmarkLogo} alt="Bookmark Logo" className="footer--logo" />
+            <img src={bookmarkLogoWhite} alt="Bookmark Logo" className="footer--logo" />
             <ul>
                 <li>Features</li>
                 <li>Pricing</li>

@@ -155,13 +155,14 @@
     margin-bottom: 96px;
 
     h2{
+        width: 70%;
         @include v.mobile-text-preset-1;
         padding-bottom: 16px;
     }
     p{
         @include v.mobile-text-preset-2-regular;
         color: v.$grey-400;
-        padding-bottom: 48px;
+        padding-bottom: 2.5rem;
     }
 }
 
@@ -173,11 +174,20 @@
     padding: 0 32px;
     margin-bottom: 96px;
 
+    h2{
+        @include v.mobile-text-preset-1;
+        padding-bottom: 16px;
+    }
+    &--desc{
+        width: 80%;
+        @include v.mobile-text-preset-2-regular;
+        color: v.$grey-600;
+        padding-bottom: 2.5rem;
+    }
+
     &__item{
         width: 100%;
-        max-width: 720px;
         text-align: left;
-        margin-bottom: 16px;
 
         &:last-child{
             margin-bottom: 0;
@@ -188,20 +198,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: v.$grey-500;
+
             border-radius: 8px;
             padding: 16px 24px;
             border-bottom: 1px solid v.$grey-400;
-            margin-bottom: 1rem;
 
-            @include v.mobile-text-preset-2-medium;
-            color: v.$grey-700;
+            @include v.mobile-text-preset-2-regular;
+            color: v.$blue-950;
 
             img{
                 width: auto;
                 height: auto;
             }
+
+            p{
+                @include v.mobile-text-preset-2-light;
+            }
         }
+
+        &--answer{
+            display: none;
+            padding: 0 24px 16px 24px;
+            @include v.mobile-text-preset-2-light;
+            color: v.$grey-600;
+        }
+    }
+
+    button{
+        margin-top: 3.5rem;
     }
 }
 
@@ -215,15 +239,17 @@
     padding: 48px 32px 48px 32px;
     background-color: v.$blue-600;
     color: v.$white;
+    margin-top: 12rem;
 
-    h2{
-        @include v.mobile-text-preset-1;
-        padding-bottom: 16px;
-    }
     p{
-        @include v.mobile-text-preset-2-regular;
-        padding-bottom: 24px;
+        @include v.mobile-text-preset-3;
     }
+
+    h3{
+        @include v.mobile-text-preset-1;
+        margin-bottom: 2rem;
+    }
+    
 
     &--form{
         display: flex;
@@ -231,6 +257,27 @@
         gap: 16px;
         width: 100%;
         max-width: 720px;
+
+        .input-wrapper{
+            position: relative;
+            
+            input{
+                padding: 12px 16px;
+                border-radius: 8px;
+                border: none;
+                font-size: 16px;
+                width: 100%;
+            }
+            
+            &::after{
+                content: url('../assets/icon-error.svg');
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 12px;
+                transform: translateY(-50%);
+            }
+        }
     }
 }
 
@@ -248,7 +295,6 @@
     img{
         width: auto;
         height: auto;
-        filter: brightness(0) invert(1);
     }
 
     ul{

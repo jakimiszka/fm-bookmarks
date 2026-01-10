@@ -1,3 +1,5 @@
+import bgDots from '../assets/bg-dots.svg';
+
 interface ExtensionCardProps {
     id?: number;
     imagePath?: string;
@@ -8,10 +10,10 @@ interface ExtensionCardProps {
 export const ExtensionCard = (props: ExtensionCardProps) => {
     return (
         <div className="extension-card">
-            <img src={props.imagePath} alt={props.title} />
+            <img className='extension-card--logo' src={props.imagePath} alt={props.title} />
             <h3>{props.title}</h3>
             <p>{props.description}</p>
-            <span></span>
+            <img className="bg-dots" src={bgDots} alt="dots" />
             <button className="btn btn--primary">Add & Install Extension</button>
         </div>
     );

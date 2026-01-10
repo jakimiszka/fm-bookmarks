@@ -1,6 +1,8 @@
+import React from 'react';
 import arrowIcon from '../assets/icon-arrow.svg';
 
 export const FaqSection = () => {
+    const questionRefs = React.useRef<(HTMLDivElement | null)[]>([]);
 
     const faqs = [
         {
@@ -21,16 +23,29 @@ export const FaqSection = () => {
         }
     ];
 
+    const toggleQuestion = (id: number) => {
+        console.log('question ' + id + ' clicked');
+        const currentQuestion = questionRefs.current[id];
+        const currentAnswer = currentQuestion?.nextElementSibling as HTMLElement | null;
+        if (currentAnswer) {
+            currentAnswer.classList.toggle('animateAnswer');
+        }
+    }
+
     return (
         <section className="faq-section">
             <h2>Frequently Asked Questions</h2>
-            <p>
+            <p className='faq-section--desc'>
                 Here are some of our FAQs. If you have any other questions you’d like 
                 answered please feel free to email us.
             </p>
             {faqs.map((faq, index) => (
                 <div key={index} className="faq-section__item">
-                    <div className="faq-section__item--question">
+                    <div 
+                        className="faq-section__item--question" 
+                        onClick={() => toggleQuestion(index)} 
+                        ref={(el: HTMLDivElement | null) => { questionRefs.current[index] = el }}
+                    >
                         <p>{faq.question}</p>
                         <img src={arrowIcon} alt="Toggle Answer" />
                     </div>
