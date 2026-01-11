@@ -5,7 +5,7 @@ export const Header = () => {
         <header className="header">
             <div className="header--graphic">
                 <img src={hero} alt="Hero Illustration" />
-                <div className='bg-shape'>
+                <div className='bg-shape setWidthShape'>
                     <div className='bg-shape--circle'></div>
                 </div>
             </div>

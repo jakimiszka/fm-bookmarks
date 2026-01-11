@@ -5,8 +5,6 @@
     width: 100%;
     min-height: 100vh;
     max-width: 450px;
-    
-    margin: 0 auto;
 
     @include u.breakpoint('medium'){
         max-width: 820px;
@@ -32,6 +30,11 @@
     }
 
     &--mobile{
+        @include u.breakpoint('large'){
+            display: none;
+            gap: 2rem;
+        }
+
         img{
             height: 100%;
             width: auto;
@@ -44,8 +47,27 @@
         align-items: center;
         height: 100%;
 
-        button{
+        @include u.breakpoint('large'){
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
 
+            ul{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+                gap: 2rem;
+
+                li{
+                    cursor: pointer;
+                    @include v.text-preset-5-light;
+                    color: v.$grey-600;
+
+                    &:hover{
+                        color: v.$blue-700;
+                    }
+                }
+            }
         }
     }
 }
@@ -61,10 +83,30 @@
     gap: 3rem;
     margin-bottom: 8rem;
 
+    @include u.breakpoint('large'){
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 0 4rem;
+    }
+
     &--graphic{
         position: relative;
         padding-bottom: 48px;
         z-index: 2;
+
+        @include u.breakpoint('large'){
+            order: 3;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            h1{
+                @include v.text-preset-1;
+            }
+            p{
+                @include v.text-preset-4;
+            }
+        }
 
         img{
             position: relative;
@@ -86,6 +128,31 @@
             @include v.mobile-text-preset-2-regular;
             color: v.$grey-400;
         }
+
+        @include u.breakpoint('medium'){
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            h1{
+                @include v.text-preset-1;
+            }
+            p{
+                @include v.text-preset-2;
+            }
+        }
+
+        @include u.breakpoint('large'){
+            order: 2;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            h1{
+                @include v.text-preset-1;
+            }
+            p{
+                @include v.text-preset-4;
+            }
+        }
     }
 
     &--buttons{
@@ -103,6 +170,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    @include u.breakpoint('large'){
+
+        flex-direction: column;
+        
+        justify-content: center;
+        align-items: center;
+
+        &--main{
+            width: 80%;
+
+            p{
+                width: 50%;
+            }
+        }
+    }
 
     &--main{
         display: flex;
@@ -127,6 +210,15 @@
             list-style: none;
             margin-bottom: 48px;
 
+            @include u.breakpoint('medium'){
+                width: 70%;
+                justify-content: center;
+                align-self: center;
+                flex-direction: row;
+                gap: 2rem;
+                border-bottom: .8px solid v.$grey-400;
+            }
+
             li{
                 cursor: pointer;
                 @include v.mobile-text-preset-2-medium;
@@ -134,8 +226,16 @@
                 border-top: .8px solid v.$grey-400;
                 padding: 1rem 0;
 
+                @include u.breakpoint('medium'){
+                    border: none;
+                }
+
                 &:nth-last-child(1){
                     border-bottom: .8px solid v.$grey-400;
+
+                    @include u.breakpoint('medium'){
+                        border: none;
+                    }
                 }
 
                 &:hover{
@@ -164,6 +264,18 @@
         color: v.$grey-400;
         padding-bottom: 2.5rem;
     }
+
+    &--cards{
+        display: flex;
+        flex-direction: column;
+
+        @include u.breakpoint('medium'){
+            width: 100%;
+            flex-direction: row;
+        }
+    }
+
+    
 }
 
 .faq-section{
@@ -249,6 +361,12 @@
         @include v.mobile-text-preset-1;
         margin-bottom: 2rem;
     }
+
+    @include u.breakpoint('medium'){
+        h3{
+            width: 60%;
+        }
+    }
     
 
     &--form{
@@ -256,7 +374,7 @@
         flex-direction: column;
         gap: 16px;
         width: 100%;
-        max-width: 720px;
+        max-width: 80%;
 
         .input-wrapper{
             position: relative;
@@ -278,6 +396,18 @@
                 transform: translateY(-50%);
             }
         }
+        
+        @include u.breakpoint('medium'){
+            width: 70%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            .input-wrapper{
+                flex: 1;
+            }
+        }   
     }
 }
 
@@ -323,6 +453,14 @@
             cursor: pointer;
             width: 24px;
             height: auto;
+        }
+    }
+
+    @include u.breakpoint('medium'){
+        flex-direction: row;
+        justify-content: space-evenly;
+        ul{
+            flex-direction: row;            
         }
     }
 }

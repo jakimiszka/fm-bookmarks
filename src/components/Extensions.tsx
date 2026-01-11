@@ -33,9 +33,12 @@ export const Extensions = () => {
                 We’ve got more browsers in the pipeline. Please do let us know if you’ve 
                 got a favourite you’d like us to prioritize.
             </p>
-            <ExtensionCard {...extensionCards[0]} />
-            <ExtensionCard {...extensionCards[1]} />
-            <ExtensionCard {...extensionCards[2]} />
+            <div className="extensions--cards">
+                <ExtensionCard {...extensionCards[0]} />
+                <ExtensionCard {...extensionCards[1]} />
+                <ExtensionCard {...extensionCards[2]} />
+            </div>
+            
         </section>
     );
 }   
