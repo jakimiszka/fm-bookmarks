@@ -11,8 +11,8 @@ export const FeatureCard = (props: FeatureCardProps) => {
             <div className="feature-card">
                 <div className="feature-card--image">
                     <img src={imagePath} alt={title} />
-                    <div className='bg-shape positionShape'>
-                        <div className='bg-shape--circle'></div>
+                    <div className='headerShape positionShape'>
+                        <div className='headerShape--circle'></div>
                     </div>
                 </div>
                 

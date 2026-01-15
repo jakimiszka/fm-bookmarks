@@ -3,11 +3,14 @@ import hero from '../assets/illustration-hero.svg';
 export const Header = () => {
     return (
         <header className="header">
+            <div className="headerShape">
+                <div className="headerShape--circle"></div>
+            </div>
             <div className="header--graphic">
                 <img src={hero} alt="Hero Illustration" />
-                <div className='bg-shape setWidthShape'>
+                {/* <div className='bg-shape setWidthShape'>
                     <div className='bg-shape--circle'></div>
-                </div>
+                </div> */}
             </div>
             <div className="header--content">
                 <h1>A Simple Bookmark Manager</h1>
