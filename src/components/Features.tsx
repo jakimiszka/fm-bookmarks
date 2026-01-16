@@ -44,40 +44,18 @@ export const Features = () => {
                     Your bookmarks sync between your devices so you can access them on the go.
                 </p>
                 <ul>
-                    <li onClick={() => onTabClick(1)}>Simple Bookmarking</li>
-                    <li onClick={() => onTabClick(2)}>Speedy Searching</li>
-                    <li onClick={() => onTabClick(3)}>Easy Searching</li>
+                    {featureData.map((feature, index) => (
+                        <li 
+                            key={index + 1}
+                            className={currentTab === index + 1 ? 'active' : ''} 
+                            onClick={() => onTabClick(index + 1)}
+                        >
+                            {feature.title}
+                        </li>
+                    ))}
                 </ul>
             </div>
             <FeatureCard {...featureData[currentTab - 1]}/>           
         </section>
     );
 }       
-
-
-
-{/* <div className="features--items__item">
-                    <h3>Simple Bookmarking</h3>
-                    <p>
-                        Organize your bookmarks however you like. Our simple drag-and-drop interface 
-                        gives you complete control over how you manage your favourite sites.
-                    </p>
-                    <button className="btn btn--primary">More Info</button>
-                </div>
-                <div className="features--items__item">
-                    <h3>Intelligent search</h3>
-                    <p>
-                        Our powerful search feature will help you find saved sites in no time at all. 
-                        No need to trawl through all of your bookmarks.
-                    </p>
-                    <button className="btn btn--primary">More Info</button>
-                </div>
-                <div className="features--items__item">
-                    <h3>Share your bookmarks</h3>
-                    <p>
-                        Easily share your bookmarks and collections with others. 
-                        Create a shareable 
-                        link that you can send at the click of a button.
-                    </p>
-                    <button className="btn btn--primary">More Info</button>
-                </div> */}
