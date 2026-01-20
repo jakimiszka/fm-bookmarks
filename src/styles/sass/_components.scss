@@ -128,7 +128,7 @@
         justify-content: center;
         margin-top: 2rem;
         gap: 1rem;
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
         h3{
             width: 70%;
             @include v.mobile-text-preset-1;
@@ -217,4 +217,11 @@
             margin: 0;
         }
     }
+}
+
+.rotatetedArrorw{
+    transform: rotate(180deg);
+    width: 16px;
+    height: 16px;
+    filter: invert(29%) sepia(76%) saturate(7473%) hue-rotate(357deg) brightness(95%) contrast(101%);
 }

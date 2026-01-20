@@ -24,11 +24,18 @@ export const FaqSection = () => {
     ];
 
     const toggleQuestion = (id: number) => {
-        console.log('question ' + id + ' clicked');
         const currentQuestion = questionRefs.current[id];
         const currentAnswer = currentQuestion?.nextElementSibling as HTMLElement | null;
         if (currentAnswer) {
             currentAnswer.classList.toggle('animateAnswer');
+            currentQuestion?.querySelector('img')?.classList.toggle('rotatetedArrorw');
+            questionRefs.current.forEach((question, index) => {
+                if (index !== id) {
+                    const answer = question?.nextElementSibling as HTMLElement | null;
+                    answer?.classList.remove('animateAnswer');
+                    question?.querySelector('img')?.classList.remove('rotatetedArrorw');
+                }       
+            });
         }
     }
 
