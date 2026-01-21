@@ -28,6 +28,10 @@
         padding-inline: 6rem;
     }
 
+    &--socials{
+        display: none;
+    }
+
     &--logo{
         img{
             height: 100%;
@@ -48,10 +52,12 @@
     }
 
     &--menu{
+        position: fixed;
         display: none;
         justify-content: space-around;
         align-items: center;
         height: 100%;
+        width: 60%;
 
         @include u.breakpoint('large'){
             display: flex;
@@ -70,7 +76,7 @@
                     color: v.$grey-600;
 
                     &:hover{
-                        color: v.$blue-700;
+                        color: v.$red-400;
                     }
                 }
             }
@@ -170,10 +176,16 @@
 
     &--buttons{
         display: flex;
+        justify-content: center;
         gap: 1rem;
 
         @include u.breakpoint('medium'){
             flex-direction: row;
+        }
+        @include u.breakpoint('large'){
+            order: 1;
+            width: 100%;
+            justify-content: flex-start;
         }
     }
 }
@@ -263,7 +275,7 @@
                 }
 
                 &:hover{
-                    color: v.$blue-700;
+                    color: v.$red-400;
                 }
 
                 &.active{
@@ -340,6 +352,11 @@
     text-align: center;
     padding: 0 32px;
 
+    @include u.breakpoint('large'){
+        width: 60%;
+        margin-inline: auto;
+    }
+
     h2{
         @include v.mobile-text-preset-1;
         padding-bottom: 16px;
@@ -368,8 +385,6 @@
             border-radius: 8px;
             padding: 16px 24px;
             border-bottom: 1px solid v.$grey-400;
-
-            // @include v.mobile-text-preset-2-regular;
             color: v.$blue-950;
 
             img{
@@ -379,6 +394,9 @@
 
             p{
                 @include v.mobile-text-preset-2-regular;
+            }
+            p:hover{
+                color: v.$red-400;
             }
         }
 
@@ -505,7 +523,8 @@
             color: v.$white;
             @include v.mobile-text-preset-2-light;
             &:hover{
-                text-decoration: underline;
+                text-decoration: none;
+                color: v.$red-400;
             }
         }
     }
@@ -518,6 +537,10 @@
             cursor: pointer;
             width: 24px;
             height: auto;
+        }
+
+        img:hover{
+            filter: invert(29%) sepia(76%) saturate(7473%) hue-rotate(357deg) brightness(95%) contrast(101%);
         }
     }
 
