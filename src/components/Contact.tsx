@@ -32,7 +32,7 @@ export const Contact = () => {
 
     return (
         <section className="contact">
-            <p>35,000+ already joined</p>
+            <p>35,000+ ALREADY JOINED</p>
             <h3>
                 Stay up-to-date with what we’re doing
             </h3>

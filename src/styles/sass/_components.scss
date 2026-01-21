@@ -37,15 +37,6 @@
     }
 }
 
-.setWidthShape{
-
-    @include u.breakpoint('medium'){
-        left: 40% !important;
-        right: 0 !important;
-        width: auto !important;
-    }
-}
-
 .headerShape{
     position: absolute;
     top: 20%;
@@ -89,7 +80,15 @@
     z-index: -1;
 
     @include u.breakpoint('medium'){    
-        top: 50%;
+        left: -60%;
+        width: 100%;
+        top: 20%;
+    }
+
+    @include u.breakpoint('large'){    
+        left: -25%;
+        width: 60%;
+        top: 40%;
     }
 
 }
@@ -102,33 +101,41 @@
     padding: 0 2rem;
 
     @include u.breakpoint('large'){
-        width: 100%;
+        width: 80%;
         flex-direction: row;
         text-align: left;
+        align-items: center;
     }
 
     img{
         max-width: 100%;
-        height: auto;
+        height: 260px;
         margin-bottom: 24px;
+
+        @include u.breakpoint('large'){
+            width: 500px;
+            height: 320px;
+            margin-bottom: 0;
+        }
     }
 
     &--image{
+        flex: 2;
         position: relative;
-        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     &--content{
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-top: 2rem;
         gap: 1rem;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
         h3{
             width: 70%;
             @include v.mobile-text-preset-1;
@@ -136,14 +143,30 @@
             padding: 2rem 2rem 0 2rem;
         }
         p{
+            width: 80%;
             @include v.mobile-text-preset-2-regular;
             color: v.$grey-400;
+        }
+
+        @include u.breakpoint('medium'){
+            width: 60%;
+            gap: 2rem;
+        }
+
+        @include u.breakpoint('large'){
+            align-items: flex-start;
+
+            h3{
+                padding: 0;
+                width: 100%;
+            }
         }
     }
 }
 
 .bg-dots{
-    padding: 1.5rem;
+    width: 100%;
+    padding: 1.5rem 0;
 }
 
 .arrowUp{
@@ -196,11 +219,13 @@
         display: flex;
         flex-direction: column;
         flex: 1 1 auto;
+        padding: 0;
+        margin: 0;
 
         &--logo{
-        max-width: 100%;
-        height: auto;
-        padding-bottom: 2rem;
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0 0 0;
         }
 
         h3{
@@ -214,7 +239,18 @@
             color: v.$grey-400;
         }
         button{
-            margin: 0;
+            margin: .5rem 0 1rem 0;
+        }
+    }
+
+
+    @include u.breakpoint('large'){
+        &:nth-child(2) {
+            margin-top: 2.5rem;
+        }
+        
+        &:nth-child(3) {
+            margin-top: 5rem;
         }
     }
 }
