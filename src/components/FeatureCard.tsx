@@ -1,6 +1,7 @@
 interface FeatureCardProps {
     id?: number;
     imagePath?: string;
+    card?: string;
     title?: string;
     description?: string;
 }

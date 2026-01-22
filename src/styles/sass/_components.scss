@@ -118,6 +118,8 @@
 
     img{
         max-width: 100%;
+        min-width: 300px;
+        width: 400px;
         height: 260px;
         margin-bottom: 24px;
 
@@ -397,6 +399,10 @@
             li:first-child{
                 border-top: 1px solid v.$grey-400;
             }
+            li:hover{
+                color: v.$blue-950;
+                background-color: v.$white;
+            }
         }
 
         button{
@@ -423,5 +429,8 @@
         left: 50%;
         transform: translateX(-50%);
         gap: 2rem;
+    }
+    .navbar--socials img:hover{
+        filter: brightness(0) saturate(100%) invert(58%) sepia(96%) saturate(458%) hue-rotate(180deg) brightness(104%) contrast(101%);
     }
 }
