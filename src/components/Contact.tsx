@@ -15,6 +15,7 @@ export const Contact = () => {
         const email = emailRef.current?.value || "";
         if (validateEmail(email)) {
             alert(`Thank you for subscribing with email: ${email}`);
+            emailWrapperRef?.current?.classList.remove("contactErrorShow");
             if (emailRef.current) {
                 emailRef.current.value = "";
             }
